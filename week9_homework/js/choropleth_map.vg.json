@@ -20,6 +20,14 @@
           "encoding": {"tooltip": {"field": "note"}}
     },
     {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+        "format": {"type": "topojson", "feature": "oceans"}
+      },
+      "mark": {"type": "geoshape", "fill": "skyblue"}
+    },
+    
+    {
         "data": {
           "url": "https://raw.githubusercontent.com/jiayi0349/3179/main/week9_homework/js/WorldMapWithGraticules.topojson",
           "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
@@ -44,7 +52,8 @@
       "color": {
       "field": "Life Expectancy World Bank",
       "type": "quantitative",
-      "scale": {"type": "log"}
+      "scale": {"type": "log", "scheme":"yellowgreen"}
+      
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
