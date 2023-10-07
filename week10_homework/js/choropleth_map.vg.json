@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 "title": "Global Life Expectancy in year 2019",
-"width": 800,
+"width": "container",
 "height": 400,
 "projection": {"type": "equalEarth"},
 "data": {
@@ -61,5 +61,6 @@
     ]
   }
     }
-]
+],
+"config": {}
 }

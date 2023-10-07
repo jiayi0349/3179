@@ -1,0 +1,62 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "title": "Trends in health expenditure",
+    "data": {
+    "url": "https://raw.githubusercontent.com/jiayi0349/3179/main/week10_homework/data/life_expectancy.csv"
+    },
+
+    "selection": {"Country_Name_highlight": {
+        "type": "multi",
+        "fields": ["Country Name"],
+        "bind": "legend"
+        }
+        },
+
+    "mark": {
+        "type": "line",
+        "interpolate": "monotone"
+        },
+    "encoding":{
+        "x": {
+        "field": "Year",
+        "type": "nominal",
+        "timeUnit": "year",
+        "title": "Year"
+        },
+        "y": {
+        "field": "Health Expenditure %",
+        "type": "quantitative",
+        "title": "expenditure on healthcare as % of GDP",
+        "scale": {"domain": [0, 20]}
+        },
+        "color": {
+        "field": "Country Name",
+        "type": "nominal",
+        "scale": {
+        "domain": [
+        "Austria",
+        "China",
+        "Spain",
+        "Japan"
+        ],
+        "range": [
+        "#e41a1c",
+        "#984ea3",
+        "#ff7f00",
+        "#a6cee3"
+        ]
+        }
+        },   
+    "opacity": {
+        "condition": {"selection": "Country_Name_highlight", "value": 0.6},
+        "value": 0.2 
+    },
+    "tooltip": [
+        {"field": "Country Name", "type": "nominal"},
+        {"field": "Health Expenditure %", "type": "quantitative", "format": ","},
+        {"field": "Life Expectancy World Bank", "type": "quantitative", "format": ","}
+        ]
+},
+"config": {} 
+}
