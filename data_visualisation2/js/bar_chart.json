@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/jiayi0349/3179/main/data_visualisation2/data/life_expectancy.csv"
+    },
+    "width": "container",
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "nominal",
+        "title": "Year"
+      },
+      "y": {
+        "aggregate": "sum",
+        "stack": null,
+        "field": "CO2",
+        "title": "Average 2012 to 2015"
+      },
+      "color": {
+        "field": "Country Name",
+        "type": "nominal",
+        "scale": {
+          "domain": [
+            "Austria",
+            "China",
+            "Spain",
+            "Japan",
+            "Thailand"
+          ],
+          "range": [
+            "#e41a1c",
+            "#984ea3",
+            "#ff7f00",
+            "#a6cee3",
+            "#377eb8"
+          ]
+        }
+      },
+      
+      "tooltip": [
+        {"field": "Country Name", "type": "nominal"},
+        {"field": "Year", "type": "nominal"},
+        {"field": "CO2", "type": "quantitative", "format": ","}
+        ]
+    },
+    "config": {}
+  }

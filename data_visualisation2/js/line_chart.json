@@ -21,7 +21,6 @@
         "x": {
         "field": "Year",
         "type": "nominal",
-        "timeUnit": "year",
         "title": "Year"
         },
         "y": {
@@ -38,13 +37,15 @@
         "Austria",
         "China",
         "Spain",
-        "Japan"
+        "Japan",
+        "Thailand"
         ],
         "range": [
         "#e41a1c",
         "#984ea3",
         "#ff7f00",
-        "#a6cee3"
+        "#a6cee3",
+        "#377eb8"
         ]
         }
         },   
@@ -54,6 +55,7 @@
     },
     "tooltip": [
         {"field": "Country Name", "type": "nominal"},
+        {"field": "Year", "type": "nominal"},
         {"field": "Health Expenditure %", "type": "quantitative", "format": ","},
         {"field": "Life Expectancy World Bank", "type": "quantitative", "format": ","}
         ]

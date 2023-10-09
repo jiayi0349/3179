@@ -1,0 +1,69 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": "container",
+    "title": "Impact of sanitation on life expectancy",
+    "data": {
+    "url": "https://raw.githubusercontent.com/jiayi0349/3179/main/data_visualisation2/data/life_expectancy.csv"
+    },
+    "selection": {"Country_Name_highlight": {
+        "type": "multi",
+        "fields": ["Country Name"],
+        "bind": "legend"
+        }
+        },
+    "mark": "circle",
+    "encoding": {
+    "x": {
+    "field": "Year",
+    "type": "nominal",
+    "title": "Year"
+    },
+    "y": {
+    "field": "Sanitation",
+    "type": "quantitative",
+    "title": "Sanitation"
+    },
+    "color": {
+    "field": "Country Name",
+    "type": "nominal",
+    "scale": {
+    "domain": [
+        "Austria",
+        "China",
+        "Spain",
+        "Japan",
+        "Thailand"
+    ],
+    "range": [
+        "#e41a1c",
+        "#984ea3",
+        "#ff7f00",
+        "#a6cee3",
+        "#377eb8"
+        ]
+        }
+        },
+        "opacity": {"value": 0.6},
+        "size": {
+        "field": "Life Expectancy World Bank",
+        "type": "quantitative",
+        "scale": {
+        "type": "threshold",
+        "domain": [60, 70, 80, 90,100],
+        "range": [10, 50, 150, 200, 300, 400]
+        },
+        "legend": {"format": ".1s"}
+        },
+        "opacity": {
+        "condition": {"selection": "Country_Name_highlight", "value": 0.6},
+        "value": 0.2 
+    },
+        "tooltip": [
+        {"field": "Country Name", "type": "nominal"},
+        {"field": "Year", "type": "nominal"},
+        {"field": "Life Expectancy World Bank", "type": "quantitative", "format": ","},
+        {"field": "Sanitation", "type": "quantitative", "format": ","}
+        ]
+        },
+        "config": {}
+        }
