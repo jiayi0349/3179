@@ -15,7 +15,7 @@
         "aggregate": "sum",
         "stack": null,
         "field": "CO2",
-        "title": "Average 2012 to 2015"
+        "title": "CO2"
       },
       "color": {
         "field": "Country Name",
