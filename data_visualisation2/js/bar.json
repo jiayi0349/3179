@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Sum of malnutrition rates in different regions",
+  "data": {"url": "https://raw.githubusercontent.com/jiayi0349/3179/main/data_visualisation2/data/life_expectancy.csv"},
+  "transform": [{"filter": "datum.Year == selectedYear"}],
+  "params": [{
+    "name": "selectedYear",
+    "bind":{"input": "range","min": 2001,"max": 2019,"step": 1,"name": "Year: "},
+    "value":2019
+  }],
+  "width":"container",
+  "encoding": {
+    "y": {
+      "field": "Region",
+      "type": "nominal",
+      "sort": "-x"
+    },
+    "x": {
+      "aggregate": "sum",
+      "field": "Prevelance of Undernourishment",
+      "title": "Sum of the percentage of malnutrition"
+    }
+  },
+  "layer": [{
+    "mark": {"type":"bar","color":"darkseagreen"}
+  }, {
+    "mark": {
+      "type": "text",
+      "align": "left",
+      "baseline": "middle",
+      "dx": 3
+    },
+    "encoding": {
+      "text": {"aggregate":"sum","field": "Prevelance of Undernourishment", "type": "quantitative"}
+    }
+  }],
+  "config": {} 
+}

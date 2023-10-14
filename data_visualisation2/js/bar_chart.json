@@ -3,6 +3,14 @@
     "data": {
       "url": "https://raw.githubusercontent.com/jiayi0349/3179/main/data_visualisation2/data/life_expectancy.csv"
     },
+    "title":"Comparison of CO2 emissions in different countries",
+    "transform": [{"calculate": "datum.CO2/1000000","as": "CO2*10^6"}],
+    "selection": {"Country_Name_highlight": {
+      "type": "multi",
+      "fields": ["Country Name"],
+      "bind": "legend"
+      }
+      },
     "width": "container",
     "mark": "bar",
     "encoding": {
@@ -14,15 +22,15 @@
       "y": {
         "aggregate": "sum",
         "stack": null,
-        "field": "CO2",
-        "title": "CO2"
+        "field": "CO2*10^6",
+        "title": "CO2 Concentration (parts per million)"
       },
       "color": {
         "field": "Country Name",
         "type": "nominal",
         "scale": {
           "domain": [
-            "Austria",
+            "Australia",
             "China",
             "Spain",
             "Japan",
@@ -37,7 +45,10 @@
           ]
         }
       },
-      
+      "opacity": {
+        "condition": {"selection": "Country_Name_highlight", "value": 0.6},
+        "value": 0.2 
+    },
       "tooltip": [
         {"field": "Country Name", "type": "nominal"},
         {"field": "Year", "type": "nominal"},

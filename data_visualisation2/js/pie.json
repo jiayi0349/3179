@@ -3,6 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/jiayi0349/3179/main/data_visualisation2/data/life_expectancy.csv"
   },
+  "title":"Statistics on the number of income classes",
   "selection": {"Country_Name_highlight": {
     "type": "multi",
     "fields": ["IncomeGroup"],
@@ -10,19 +11,20 @@
     }
     },
   "width": "container",
-  "mark": "arc",
-  "encoding": {
-    "theta": {"field": "count", "type": "quantitative"},
-    "color": {"field": "IncomeGroup", "type": "nominal"},
-    "opacity": {
-      "condition": {"selection": "Country_Name_highlight", "value": 0.6},
-      "value": 0.2
-      },
-    "tooltip": [
-      {"field": "IncomeGroup", "type": "nominal"},
-      {"field": "count", "type": "quantitative"}
-    ]
-  },
+    "mark": "arc",
+    "encoding": {
+      "theta": {"field": "count", "type": "quantitative"},
+      "color": {"field": "IncomeGroup", "type": "nominal"},
+      "opacity": {
+        "condition": {"selection": "Country_Name_highlight", "value": 0.6},
+        "value": 0.2
+        },
+      "tooltip": [
+        {"field": "IncomeGroup", "type": "nominal"},
+        {"field": "count", "type": "quantitative"}
+      ]
+    }
+  ,
   "transform": [{"aggregate": [{"op": "count", "as": "count"}], "groupby": ["IncomeGroup"]}
 
   ],

@@ -12,7 +12,6 @@
         "bind": "legend"
         }
         },
-
     "mark": {
         "type": "line",
         "interpolate": "monotone"
@@ -34,7 +33,7 @@
         "type": "nominal",
         "scale": {
         "domain": [
-        "Austria",
+        "Australia",
         "China",
         "Spain",
         "Japan",
@@ -58,7 +57,8 @@
         {"field": "Year", "type": "nominal"},
         {"field": "Health Expenditure %", "type": "quantitative", "format": ","},
         {"field": "Life Expectancy World Bank", "type": "quantitative", "format": ","}
-        ]
+        ],
+        "text": {"field": "Country Name", "type": "nominal"}
 },
 "config": {} 
 }

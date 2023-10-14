@@ -23,6 +23,15 @@
 
 </head>
 <body>
+  <div class="page"><div class="pure-g">
+    <div class="pure-u-1-1">
+      <h1 style="color: steelblue;">Life expectancy & Socio-Economic</h1>
+      <p>Life expectancy is a key indicator for assessing the health status of a population. 
+        Further analyses are necessary to determine how the distribution of wealth in a country has 
+        an overall impact on life expectancy through certain investments in health care, education, 
+        environmental stewardship and some socio-economic factors.</p>
+    </div>
+  </div></div>
   <div class="page">
 
  <!-- pure grid group -->
@@ -118,7 +127,22 @@
     </div>
     <!-- end pure grid group -->
 
-
+<!-- pure grid group -->
+<div class="pure-g">
+  <div class="pure-u-1-2">
+    <div class="description description-left">
+      <h2 style="color: steelblue;">CO2 as life expectancy factor</h2>
+      <p>Carbon dioxide emissions (thousands of tons) - 
+        Carbon dioxide emissions are emissions of carbon dioxide from the combustion of fossil 
+        fuels and cement. They include carbon dioxide produced in the following processes Carbon
+         dioxide from the consumption of solid, liquid and gaseous fuels and from the combustion of natural gas. </p>
+    </div>
+  </div>
+  <div class="pure-u-1-2">
+    <div id="vis6" class="vis-container"></div>
+  </div>
+</div>
+<!-- end pure grid group -->
   </div> <!-- end page -->
 
 
@@ -130,6 +154,7 @@
   var specVis3 = "js/bubble_chart.json";
   var specVis4 = "js/bar_chart.json";
   var specVis5 = "js/pie.json";
+  var specVis6 = "js/bar.json";
 
   vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -148,6 +173,10 @@
   }).catch(console.error);
 
   vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+   // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
