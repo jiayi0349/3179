@@ -2,6 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Sum of malnutrition rates in different regions",
   "data": {"url": "https://raw.githubusercontent.com/jiayi0349/3179/main/data_visualisation2/data/life_expectancy.csv"},
+  "height":230,
   "transform": [{"filter": "datum.Year == selectedYear"}],
   "params": [{
     "name": "selectedYear",
